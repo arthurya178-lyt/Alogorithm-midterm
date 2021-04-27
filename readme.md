@@ -6,3 +6,4 @@ BubbleSort
 HeapSort
 InsertionSort
 LinerSearch
+MergeSort
