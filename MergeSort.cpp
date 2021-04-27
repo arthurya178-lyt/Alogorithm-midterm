@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+#define INT_MAX 2147483647
 template <typename T>
 void Swap(T &a, T &b)
 {
@@ -48,6 +49,7 @@ void mergeSort(vector<int> &arr,int front,int last)
 		mergeSort(arr, front, mid);
 		mergeSort(arr, mid + 1, last);
 		merge(arr,front,mid,last);
+		printArrays(arr);
 	}
 }
 void mergeSort(vector<int> &arr)
@@ -61,5 +63,4 @@ int main()
 	int i, n;
 	for (cin >> i; i > 0; i--) { cin >> n; A.push_back(n); }
 	mergeSort(A);
-	printArrays(A);
 }
