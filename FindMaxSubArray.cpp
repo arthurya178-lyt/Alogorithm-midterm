@@ -22,11 +22,6 @@ vector<T> findMaxSubArray(vector<T> &Array)
 	{
 		currMaxSubArray += Array[i];
 
-		if (currMaxSubArray < 0)
-		{
-			currMaxSubArray = 0;
-			start = i+1;
-		}
 		if (Array[i] > currMaxSubArray)
 		{
 			currMaxSubArray = Array[i];
@@ -35,6 +30,12 @@ vector<T> findMaxSubArray(vector<T> &Array)
 		{
 			maxSubArray = currMaxSubArray;
 			result = { start,i,maxSubArray };
+		}
+		
+		if (currMaxSubArray < 0)
+		{
+			currMaxSubArray = 0;
+			start = i+1;
 		}
 	}
 	return result;
